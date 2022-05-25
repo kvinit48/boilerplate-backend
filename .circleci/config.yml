@@ -7,17 +7,17 @@ jobs:
       - checkout
       - run:
           command: find . -name 'pom.xml' | sort | xargs cat > /tmp/maven_cache_seed
-          working_directory: ~/project/my-app
+          working_directory: ~/project/boilerplate-backend
       - restore_cache:
           key: circleci-java-maven-{{ checksum "/tmp/maven_cache_seed" }}
       - run: 
           command: mvn package
-          working_directory: ~/project/my-app          
+          working_directory: ~/project/boilerplate-backend         
       - save_cache:
           paths:
             - ~/.m2/repository
           key: circleci-java-maven-{{ checksum "/tmp/maven_cache_seed" }}
       - store_test_results:
-          path: ~/project/my-app/target/surefire-reports
+          path: ~/project/boilerplate-backend/target/surefire-reports
       - store_artifacts:
-          path: ~/project/my-app/target/my-app-1.0-SNAPSHOT.jar
+          path: ~/project/boilerplate-backend/target/boilerplate-backend-1.0-SNAPSHOT.jar

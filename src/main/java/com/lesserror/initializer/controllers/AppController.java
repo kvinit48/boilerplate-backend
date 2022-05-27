@@ -55,6 +55,7 @@ public class AppController {
     resource = new FileSystemResource(path);
     return ResponseEntity.ok()
             .contentType(MediaType.APPLICATION_OCTET_STREAM)
+            .header(HttpHeaders.TRANSFER_ENCODING,"binary")
             .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() )
             .body(resource);
   }
@@ -67,5 +68,10 @@ public class AppController {
   @GetMapping("/testApi")
   public void getTestTemplate() {
       s3Service.downloadFile("test.txt","test.txt");
+  }
+
+  @GetMapping("")
+  public String getHello(){
+    return "Hello, try /api with query parameter containing name of frontend and backend tech";
   }
 }

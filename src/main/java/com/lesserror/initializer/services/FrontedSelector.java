@@ -10,7 +10,7 @@ public class FrontedSelector {
     S3Service s3Service;
 
     public void select(String frontend){
-        String frontendFilePath = "frontend/" + frontend;
+        String frontendFilePath = "frontend/" + frontend + ".zip";
         String destPath = "src/main/resources/project-target/" + frontend + ".zip";
         s3Service.downloadFile(frontendFilePath,destPath);
     }

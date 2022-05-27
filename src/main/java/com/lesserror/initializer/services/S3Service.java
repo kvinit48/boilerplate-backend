@@ -34,7 +34,7 @@ public class S3Service {
       .build();
 
   /** The bucket name. */
-  private String bucketName = "selectui";
+  private String bucketName = "selecttech";
 
   /**
    * Download file.

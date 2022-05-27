@@ -1,3 +1,6 @@
+server:
+  port: 8081
+
 aws:
   secretKey: AKIAUZFHH2RN47CTPMKM
   accessKey: Uy4Tif3fm43IB7U2SgMokt6n5v9qs6dESVonNXdI

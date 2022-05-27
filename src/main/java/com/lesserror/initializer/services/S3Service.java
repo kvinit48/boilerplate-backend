@@ -40,12 +40,12 @@ public class S3Service {
    * Download file.
    *
    */
-  public void downloadFile() {
+  public void downloadFile(String filename,String destDir) {
 
-    S3Object s3object = s3client.getObject(bucketName, "Main.java.txt");
+    S3Object s3object = s3client.getObject(bucketName, filename);
     S3ObjectInputStream inputStream = s3object.getObjectContent();
     try {
-      FileUtils.copyInputStreamToFile(inputStream, new File("new.txt"));
+      FileUtils.copyInputStreamToFile(inputStream, new File(destDir));
     } catch (IOException e) {
       logger.info("Exception Occured in creating file", e);
     }

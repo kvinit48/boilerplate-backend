@@ -15,7 +15,7 @@
 	<name>initializer</name>
 	<description>backend for boilerplate initializer project</description>
 	<properties>
-		<java.version>16.0.1</java.version>
+		<java.version>16.0.2</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -59,13 +59,13 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-			<plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-eclipse-plugin</artifactId>
-        <configuration>
-            <projectNameTemplate>boilerplate-backend</projectNameTemplate>
-        </configuration>
-    </plugin>
+<!--			<plugin>-->
+<!--        		<groupId>org.apache.maven.plugins</groupId>-->
+<!--				<artifactId>maven-eclipse-plugin</artifactId>-->
+<!--        		<configuration>-->
+<!--            		<projectNameTemplate>boilerplate-backend</projectNameTemplate>-->
+<!--        		</configuration>-->
+<!--    		</plugin>-->
 		</plugins>
 	</build>
 

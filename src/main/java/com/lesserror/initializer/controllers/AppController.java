@@ -4,6 +4,7 @@ import com.lesserror.initializer.models.AppRequest;
 import com.lesserror.initializer.services.CreateTemplate;
 import com.lesserror.initializer.services.S3Service;
 import com.lesserror.initializer.utils.DeleteDirectroyUtil;
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
@@ -42,7 +43,7 @@ public class AppController {
           @RequestParam("backend") String backend){
 
     DeleteDirectroyUtil.deleteDirectory(new File("src/main/resources/project-target"));
-    DeleteDirectroyUtil.deleteDirectory(new File("src/main/resources/project-target"));
+    DeleteDirectroyUtil.deleteDirectory(new File("src/main/resources/project"));
     File f1 = new File("src/main/resources/project-target");
     File f2 = new File("src/main/resources/project");
     f1.mkdir();
